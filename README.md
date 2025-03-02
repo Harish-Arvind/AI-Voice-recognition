@@ -75,5 +75,5 @@ Thank you for reading this :)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE]([LICENSE](https://github.com/Harish-Arvind/AI-Voice-recognition/blob/main/AI%20Voice%20recognition/LICENSE)) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Harish-Arvind/AI-Voice-recognition/blob/main/AI%20Voice%20recognition/LICENSE) file for details.
 
