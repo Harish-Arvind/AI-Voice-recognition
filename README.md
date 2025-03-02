@@ -1,79 +1,71 @@
-# AI-Voice-recognition
+# AI Voice Recognition
 
-The Voice Recognition project folder does not contain the audios because there is
-a great number of them and it would have taken a lot of time to submit them. Because of this, you
-will see that the test and train folders are empty. If you want to test feature extraction or the csv
-file generation you will need to download the file from the website of the competition and insert the
-audios in the respective folders.
+Welcome to the AI Voice Recognition project!
 
-In the Pickel folder there is supposed to be 3 files:
-- preprocessed_data.pkl
-- pca_preprocessed_data.pkl
-- pca_200_preprocessed_data.pkl
+### Overview
 
-We didn't upload those files because they are also too big. If you want to test the training models
-you need to generate those files with the first block of code of each ipynb file or you can download
-them here (It is faster if you download them)
+The Voice Recognition project folder does not include audio files due to the large number of them, which would have made uploading time-consuming. As a result, the **train** and **test** folders are empty. To test feature extraction or generate CSV files, you will need to download the audio files from the competition website and place them in the respective folders.
 
-https://drive.google.com/file/d/1IfGgnKAqnSaO4cKn4eJESAHtgGgrCSzj/view?usp=sharing
+### Required Files
 
-There are 3 ipynb files which contain similar code. The main difference is the number
-of features/dimensions that each of them uses for their training and evaluation.
+In the **Pickle** folder, there should be 3 files:
 
-The best model chosen by us is MLP with 200 features/dimensions because it is the one who has got
-very good results and that uses the smaller number of dimensions preventing overfitting. 
+- `preprocessed_data.pkl`
+- `pca_preprocessed_data.pkl`
+- `pca_200_preprocessed_data.pkl`
 
-We tested our model in the test set given by the competition website, and you can see the labels that 
-were inserted by the MLP with 200 features in the sample_submission.csv file. 
+Due to their large size, these files have not been uploaded. You can either generate them by running the first block of code in each notebook (`.ipynb` file) or download them directly from the following link for faster access:
 
-We created the file in the format that the competition website asked for (filename | label).
+[Download Pickle Files](https://drive.google.com/file/d/1IfGgnKAqnSaO4cKn4eJESAHtgGgrCSzj/view?usp=sharing)
 
-We didn't find any labels for the test set to evaluate it and see if the results were correct. So, 
-if one wants to see if the model inserted a correct label, it must listen to the audios manually.
+### Notebooks Overview
 
-If you want to train a model by yourself follow these steps:
+There are 3 Jupyter notebooks included, which contain similar code with the main difference being the number of features/dimensions used for training and evaluation. 
 
-1. You must generate the Pickel files or download them
-2. Run the "Creation of train, test and validation set" section
-3. Run "Visualization of a sample" section
-4. Run "Splitting of the train set into test set and training set"
-5. Depending on the model you want to train, run every module of the respective model
-you want to train except the block “Algorithm to select best parameters” because we only used
-its output.
+The best-performing model, chosen based on results, is the **MLP** (Multi-Layer Perceptron) with 200 features, as it achieved great results while minimizing the risk of overfitting by using fewer dimensions.
 
-Example: 
-If you want to train MLP run directly “Training of the model and display of the metrics” and
-the rest of modules below it. If you want to see for yourself the best parameters, you can run
-“Algorithm to select best parameters”.
+The model was tested on the test set provided by the competition website. You can find the predictions made by the MLP model with 200 features in the `sample_submission.csv` file, formatted as requested by the competition (filename | label).
 
-!!!!!!Warning!!!!!!!
+Please note: We did not have access to the true labels for the test set, so to verify the accuracy of the model’s predictions, you will need to manually listen to the audios.
 
-- Do not run the first code of each of the ipynb files unless you really want to generate the Pickel files.
-It will cost a great amount of your CPU. If you want to do it anyway you will have to wait minimum 30
-minutes so it can finish.
+### Steps to Train Your Own Model
 
-- Do not run all the modules at the same time, it will use all your cpu.
+To train the model yourself, follow these steps:
 
-- If you see a warning before the display of the metrics of a model, it is because the 
-zero_division parameter was not put into the function :
+1. **Generate or Download the Pickle Files** (as mentioned above).
+2. **Run the "Creation of Train, Test, and Validation Set" Section.**
+3. **Run the "Visualization of a Sample" Section.**
+4. **Run the "Splitting of the Train Set into Test and Training Set" Section.**
+5. Depending on the model you wish to train, run the relevant modules, skipping the block titled “Algorithm to Select Best Parameters,” which is only used for selecting optimal parameters.
 
-print(metrics.classification_report(y_test, predicted, labels=labels_to_include, zero_division=0))
+**Example:** 
+- If you want to train the **MLP** model, run the "Training of the Model and Display of Metrics" section, along with the subsequent modules. 
+- If you want to find the best parameters, run the "Algorithm to Select Best Parameters" section.
 
-- If you want to test the models in the 1248 file, you will have to wait a lot of time(e.g ~20 minutes for
-the training of MLP model)
+### Important Notes:
 
+- **Do not run the first code block** in any of the `.ipynb` files unless you want to generate the Pickle files. This will be very resource-intensive and can take up to **30 minutes** or more.
+- **Avoid running all modules simultaneously** as it will utilize a large portion of your CPU.
+- If you encounter a warning before the model metrics are displayed, it is because the `zero_division` parameter was not added to the classification report function:
 
-Author of the features and data extraction (2 first modules of each ipynb file): 
+  ```python
+  print(metrics.classification_report(y_test, predicted, labels=labels_to_include, zero_division=0))
+  ```
 
-Harish Arvind SELVAKUMAR and Nissanth Nadarassin
+- Testing the models on the full dataset (1248 files) can take a significant amount of time. For example, **MLP** training could take around **20 minutes**.
 
-Author of the data splitting, training and evaluation (the rest of the modules in each ipynb file) :
+### Acknowledgments
 
-Ivan Arturo Grandi Flores
+- **Feature extraction and data preparation** (first two modules of each notebook) by:  
+  **Harish Arvind SELVAKUMAR** and **Nissanth Nadarassin**.
+  
+- **Data splitting, training, and evaluation** (remaining modules in each notebook) by:  
+  **Ivan Arturo Grandi Flores**.
 
-Thank you for reading this :)
+Thank you for your interest in this project!
+
+---
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/Harish-Arvind/AI-Voice-recognition/blob/main/AI%20Voice%20recognition/LICENSE) file for details.
-
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/Harish-Arvind/AI-Voice-recognition/blob/main/AI%20Voice%20recognition/LICENSE) file for details.
