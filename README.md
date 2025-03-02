@@ -72,3 +72,8 @@ Author of the data splitting, training and evaluation (the rest of the modules i
 Ivan Arturo Grandi Flores
 
 Thank you for reading this :)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE]([LICENSE](https://github.com/Harish-Arvind/AI-Voice-recognition/blob/main/AI%20Voice%20recognition/LICENSE)) file for details.
+
